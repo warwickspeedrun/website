@@ -10,8 +10,8 @@
     <nav class="navbar" aria-label="main navigation">
         <div class="container align-items-center">
             <div class="navbar-nav">
-                <a class="nav-link" href="/"><i class="bi bi-house-fill"></i> Front Page</a>
-                <a class="nav-link" href="/guides"><i class="bi bi-bookmark-fill"></i> Guides</a>
+                <a class="nav-link" href="{{ config.base_url | safe }}"><i class="bi bi-house-fill"></i> Front Page</a>
+                <a class="nav-link" href="{{ get_url(path='guides') }}"><i class="bi bi-bookmark-fill"></i> Guides</a>
                 <button id="dark-mode" class="nav-link ml-1" aria-label="Toggle dark mode">
                     <span class="fs-4 icon">{{ shortcodes::icon(icon="ph-moon") }}</span>
                 </button>

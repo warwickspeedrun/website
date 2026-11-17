@@ -20,7 +20,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link" target="_blank" href="{{ get_url(path='vods') }}"><i class="bi bi-camera-video-fill"></i> VODs</a>
                     <a class="nav-link" target="_blank" href="{{ get_url(path='discord') }}"><i class="bi bi-discord"></i> Discord</a>
-                    <a class="nav-link" href="/guides"><i class="bi bi-bookmark-fill"></i> Guides</a>
+                    <a class="nav-link" href="{{ get_url(path='guides') }}"><i class="bi bi-bookmark-fill"></i> Guides</a>
                     <button id="dark-mode" class="nav-link ml-1" aria-label="Toggle dark mode">
                         <span class="fs-4 icon">{{ shortcodes::icon(icon="ph-moon") }}</span>
                     </button>
@@ -31,7 +31,7 @@
         <div class="hero-body">
             <div class="container">
                 <div class="hero-items">
-                    <img id="keys-logo" src="images/header-logo.svg" alt="WASD square-based logo" fetchpriority="high" />
+                    <img id="keys-logo" src="{{ get_url(path='images/header-logo.svg') }}" alt="WASD square-based logo" fetchpriority="high" />
                     <div class="descriptor-box">
                         <div class="backing">
                             <p>Celebrating <strong><i>10 years</i></strong> of the largest student-led speedrunning marathon in the UK supporting <a target="_blank" href="https://specialeffect.org.uk">SpecialEffect</a>.</p>
@@ -114,7 +114,7 @@
                 <h4 class="title is-size-4">Supporting</h4>
                 <div class="logos">
                     <a class="opacity-hover" href="https://www.specialeffect.org.uk">
-                        <img src="/images/specialeffect.png" alt="SpecialEffect" style="height: auto" />
+                        <img src="{{ get_url(path='images/specialeffect.png') }}" alt="SpecialEffect" style="height: auto" />
                     </a>
                 </div>
             </div>
