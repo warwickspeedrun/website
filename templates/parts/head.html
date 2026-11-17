@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {%- block title %}{{ resource.title | default(value="Warwick Speedrun") | striptags | safe }}
+        {%- block title %}{{ (resource.title or "Warwick Speedrun") | striptags | safe }}
         {%- endblock %} - WASD {{ e.event_year }}
     </title>
 

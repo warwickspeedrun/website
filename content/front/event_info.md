@@ -6,13 +6,13 @@
 
 Warwick's Awesome Speedruns and Demos (WASD) is a 2-day speedrunning marathon run yearly at the University of Warwick, UK.
 
-WASD is the *largest* student-run speedrunning event in the UK, and it's now in its ***tenth*** year! WASD is back for {{ event_year }}, kicking off on {{ event_start_date }} at: <a target="_blank" href="{{ campus_location_url }}">{{ campus_location }}, University of Warwick, UK</a>!
+WASD is the *largest* student-run speedrunning event in the UK, and it's now in its ***tenth*** year! WASD is back for {{ config.extra.event_year }}, kicking off on {{ config.extra.event_start_date }} at: <a target="_blank" href="{{ config.extra.campus_location_url }}">{{ config.extra.campus_location }}, University of Warwick, UK</a>!
 
 We'll have great fun speedrunning, spectating and commentating a whole host of games, as well as doing various silly donation incentives to spice things up more!
 
 The event raises money for [SpecialEffect](https://specialeffect.org.uk), a charity which develops and provides assistive technology to help people with disabilities to play games.
 
-To date, we have raised over {{ money_raised }}!
+To date, we have raised over {{ config.extra.money_raised }}!
 
 </div>
 </div>
@@ -22,13 +22,13 @@ To date, we have raised over {{ money_raised }}!
 
 <h4 class="title is-size-4">When?</h4>
 
-WASD {{ event_year }} begins on **{{ event_start_date }}**.
+WASD {{ config.extra.event_year }} begins on **{{ config.extra.event_start_date }}**.
 
-WASD submissions close on **{{ subs_close_date }}**, with the schedule being released around **{{ schedule_release_date }}**.
+WASD submissions close on **{{ config.extra.subs_close_date }}**, with the schedule being released around **{{ config.extra.schedule_release_date }}**.
 
 <h4 class="title is-size-4">Where?</h4>
 
-WASD {{ event_year }} will be held on campus, as well as streamed live on the WASD [Twitch channel](https://warwickspeed.run/twitch).
+WASD {{ config.extra.event_year }} will be held on campus, as well as streamed live on the WASD [Twitch channel](https://warwickspeed.run/twitch).
 
 <h4 class="title is-size-4">Who?</h4>
 

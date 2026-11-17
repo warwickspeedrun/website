@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 
-{% import "macros/svgs.html" as svgs %}
-{% import "macros/md.html" as md %}
-
 {% block title %}{% endblock title %}
 {% block header %}{% endblock header %}
 {% block main_extra %}{% endblock %}
@@ -13,7 +10,7 @@
                 <a class="nav-link" href="{{ config.base_url | safe }}"><i class="bi bi-house-fill"></i> Front Page</a>
                 <a class="nav-link" href="{{ get_url(path='guides') }}"><i class="bi bi-bookmark-fill"></i> Guides</a>
                 <button id="dark-mode" class="nav-link ml-1" aria-label="Toggle dark mode">
-                    <span class="fs-4 icon">{{ shortcodes::icon(icon="ph-moon") }}</span>
+                    <span class="fs-4 icon">{{ <shortcodes.icon icon="ph-moon" /> }}</span>
                 </button>
             </div>
         </div>
@@ -23,15 +20,16 @@
         <section id="about" class="section">
             <div class="container">
                 <h1 class="title is-size-2">WASD {{ e.event_year }} {% if resource.title %}{{"- " ~ resource.title }}{% endif %}</h1>
-                {{ md::comp(data=resource.content) }}
+                {{ resource.content | safe }}
                 <!--Note slight limitation is it's a pain to do a sort by weight on an array of mixed sections and pages-->
                 {% if section %}
                     {% set guides = [] %}
-                
+
                     {% for s in section.subsections %}
-                        {% set_global guides = guides | concat(with=get_section(path=s)) %}
+                        {% set_global guides = [...guides, get_section(path=s)] %}
                     {% endfor %}
-                    {% set guides = guides | concat(with=section.pages) %}
+
+                    {% set guides = [...guides, ...section.pages] %}
                     
                     <p>We currently have {{ guides | length }} guides:</p>
                     <div class="row">

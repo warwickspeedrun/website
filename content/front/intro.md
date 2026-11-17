@@ -9,8 +9,8 @@ Moreover, we've run some less standard titles such as *Toy Story 2: Buzz Lightye
 
 Some runs may even surprise you! Fan favourites include our *Celeste* on DK Bongos run, *Super Monkey Ball* and *Geoguessr*. 
 
-WASD will be returning on {{ event_date_range }} - [submissions are now open](/signup)!
+WASD will be returning on {{ config.extra.event_date_range }} - [submissions are now open](/signup)!
 
 Donations to the event are in support of [SpecialEffect](https://specialeffect.org.uk/), a wonderful UK-based charity whose mission is to put fun and inclusion back into the lives of people with physical disabilities, by helping them to play video games. They achieve this by using and developing a range of accessibility hardware and software, from modified joypads to eye-gaze technology.
 
-To date, WASD has raised over {{ money_raised }}!
+To date, WASD has raised over {{ config.extra.money_raised }}!

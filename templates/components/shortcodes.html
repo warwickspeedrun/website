@@ -1,0 +1,6 @@
+{% component shortcodes.icon(@icon: string, @baseline=false) %}
+    {% if icon is starting_with(pat="ph-") %}<i class="ph-bold {{ icon }}"></i>
+    {% elif icon is starting_with(pat="bi-") %}<i class="bi {{ icon }}"></i>
+    {% else %} <div class="icon {%- if baseline %} baseline {%- endif %}"><img class="silhouette" src="{{ get_url(path=icon) }}" alt="icon"></div>
+    {% endif %}
+{% endcomponent shortcodes.icon %}

@@ -1,13 +1,9 @@
 {% extends "base.html" %}
 
-{% import "macros/svgs.html" as svgs %}
-{% import "macros/md.html" as md %}
-
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block title %}Warwick Speedrunning {{ e.event_year }} {% endblock title %}
 {% block header %}{% endblock header %}
 {% block main_extra %}{% endblock %}
 {% block outercontents %}
@@ -22,7 +18,7 @@
                     <a class="nav-link" target="_blank" href="{{ get_url(path='discord') }}"><i class="bi bi-discord"></i> Discord</a>
                     <a class="nav-link" href="{{ get_url(path='guides') }}"><i class="bi bi-bookmark-fill"></i> Guides</a>
                     <button id="dark-mode" class="nav-link ml-1" aria-label="Toggle dark mode">
-                        <span class="fs-4 icon">{{ shortcodes::icon(icon="ph-moon") }}</span>
+                        <span class="fs-4 icon">{{ <shortcodes.icon icon="ph-moon" /> }}</span>
                     </button>
                 </div>
             </div>
@@ -78,11 +74,11 @@
             <div>
                 <div class="content clearfix">
                     <div id="stopwatch-column" class="float-lg-end d-none d-lg-block ms-3 my-5 pt-5 pb-3">
-                        {{ svgs::stopwatch() }}
+                        {{ <svgs.stopwatch /> }}
                     </div>
                     <h1>Warwick's Awesome Speedruns and Demos</h1>
                     <hr class="title-divider">
-                    {{ md::comp(data=md::get_content(path="front/intro.md")) }}
+                    {{ <md.get_content path="front/intro.md" /> | safe }}
                 </div>
             </div>
 
@@ -99,11 +95,11 @@
             </div>
             <div class="logo-level">
                 <h4 class="title is-size-4">Partners</h4>
-                {{ md::comp(data=md::get_content(path="front/partners.html")) }}
+                {{ <md.get_content path="front/partners.html" /> }}
             </div>
             
-            {% set spon = md::comp(data=md::get_content(path="front/sponsors.html")) -%}
-            {% if not spon is matching("^\s*$") %}
+            {% set spon = <md.get_content path="front/sponsors.html" /> -%}
+            {% if spon | trim != "" %}
 
             <div class="logo-level">
                 <h4 class="title is-size-4">Sponsors</h4>
@@ -134,7 +130,7 @@
                         <h1 id="event-title" class="title is-size-2">Event Info</h1>
                         <hr id="event-underline">
                     </div>
-                    {{ md::comp(data=md::get_content(path="front/event_info.md")) }}
+                    {{ <md.get_content path="front/event_info.md" /> | safe }}
                 </div>
             </div>
         </section>
@@ -167,7 +163,7 @@
                 WASD {{ e.event_year }} will be held in-person, so come along and support the runners!</p>
             </div>
             <div class="whats-on-wrapper">
-                {{ md::comp(data=md::get_content(path="front/whats_on.md")) }}
+                {{ <md.get_content path="front/whats_on.md" /> | safe }}
             </div>
 
             <div class="phase-sub">

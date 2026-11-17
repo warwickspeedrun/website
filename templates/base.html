@@ -1,11 +1,11 @@
-{% import "macros/shortcodes.html" as shortcodes %}
-
 {% if page %} {% set resource = page %}
 {% elif section %} {% set resource = section %}
 {% elif term %} {% set resource = term %}
 {% elif taxonomy %} {% set resource = taxonomy %}
 {% endif %}
 {% set_global e = config.extra %}
+
+{% block title %} {% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
