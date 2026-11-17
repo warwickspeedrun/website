@@ -15,7 +15,7 @@ We can provide a controller, or you can bring your own gear if you prefer - just
 
 The [Computing Society](https://uwcs.co.uk/) can provide the following consoles - again, let us know if you need one for your run:
 
-- Xbox: Xbox One X and Xbox 360
+- Xbox: Xbox One X
 - Nintendo: Switch 2, Switch, Wii U
 - Playstation: PS4, PS5
 
