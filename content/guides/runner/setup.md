@@ -17,7 +17,7 @@ The [Computing Society](https://uwcs.co.uk/) can provide the following consoles 
 
 - Xbox: Xbox One X and Xbox 360
 - Nintendo: Switch 2, Switch, Wii U
-- Playstation: PS4
+- Playstation: PS4, PS5
 
 We can pre-install many games, however if you have requirements for specific versions, DLCs, or settings, let us know. We'd always recommend you bring a USB with everything installed as a backup, just in case.
 
