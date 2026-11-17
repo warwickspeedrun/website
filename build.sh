@@ -1,27 +1,16 @@
-#!/bin/sh
-set -e
+#!/bin/bash
+set -eu
 
-export SCRIPT_DIR=$(dirname "$(realpath $0)")
-cd $SCRIPT_DIR && echo "Running in $SCRIPT_DIR"
+cd "$(dirname "$0")"
 
-git checkout master
-if [ -z $NO_PULL ]; then 
-    git fetch --all --prune
-    git reset --hard origin/master
-    git pull --recurse-submodules
-fi
+echo "Building draft..."
+./bin/zola build --drafts --base-url https://draft.warwickspeed.run --output-dir ./draft/public --force
+cd draft
+../node_modules/.bin/purgecss --config ../purgecss.config.js --preserve-paths
+cd ..
 
-# Build main
-./zola build --base-url https://warwickspeed.run --output-dir ../build --force
-
-# Remove redundant css from prod site
-if which purgecss; then
-    purgecss --config purgecss.config.js
-fi
-
-# Swap versions asap
-[ -d "../public" ] && mv ../public ../old
-mv ../build ../public
-rm -rf ../old
-
-[[ -f /srv/restart-lighttpd.sh ]] && sudo /srv/restart-lighttpd.sh
+echo "Building main site..."
+./bin/zola build --base-url https://warwickspeed.run --output-dir ./prod/public --force
+cd prod
+../node_modules/.bin/purgecss --config ../purgecss.config.js --preserve-paths
+cd ..

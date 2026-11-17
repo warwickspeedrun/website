@@ -1,3 +1,4 @@
 [submodule "sass/bootstrap"]
 	path = sass/bootstrap
 	url = https://github.com/twbs/bootstrap
+	shallow = true

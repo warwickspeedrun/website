@@ -1,0 +1,12 @@
+services:
+  warwickspeedrun:
+    container_name: warwickspeedrun
+    image: ghcr.io/warwickspeedrun/website:master
+    restart: unless-stopped
+    ports:
+      - "1111:80"  # prod
+      - "1112:81"  # draft
+    # some of the images are NOT to be in version control
+    volumes:
+      - /var/lib/docker/nvc_ims:/srv/warwickspeedrun/prod/public/nvc_ims:ro
+      - /var/lib/docker/nvc_ims:/srv/warwickspeedrun/draft/public/nvc_ims:ro
